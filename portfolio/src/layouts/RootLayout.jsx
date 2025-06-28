@@ -1,5 +1,7 @@
 import { NavLink, Outlet } from "react-router";
 import logo from "../assets/logo.png";
+// import { BorderBeam } from "@stianlarsen/border-beam";
+import DownloadFullCV from "../components/pdfCreator/DownloadFullCV";
 
 const RootLayout = () => {
   return (
@@ -21,20 +23,38 @@ const RootLayout = () => {
             <div className="hidden lg:flex flex-1 justify-center">
               <ul className="menu menu-horizontal px-1">
                 <li>
-                  <NavLink to="/" className={({ isActive }) =>
-                    `transition-all duration-200 ${isActive ? "border-b-2 border-primary" : ""}`}>
+                  <NavLink
+                    to="/"
+                    className={({ isActive }) =>
+                      `transition-all duration-200 ${
+                        isActive ? "border-b-2 border-primary" : ""
+                      }`
+                    }
+                  >
                     Home
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/about" className={({ isActive }) =>
-                    `transition-all duration-200 ${isActive ? "border-b-2 border-primary" : ""}`}>
+                  <NavLink
+                    to="/about"
+                    className={({ isActive }) =>
+                      `transition-all duration-200 ${
+                        isActive ? "border-b-2 border-primary" : ""
+                      }`
+                    }
+                  >
                     About
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/contact" className={({ isActive }) =>
-                    `transition-all duration-200 ${isActive ? "border-b-2 border-primary" : ""}`}>
+                  <NavLink
+                    to="/contact"
+                    className={({ isActive }) =>
+                      `transition-all duration-200 ${
+                        isActive ? "border-b-2 border-primary" : ""
+                      }`
+                    }
+                  >
                     Contact
                   </NavLink>
                 </li>
@@ -47,20 +67,38 @@ const RootLayout = () => {
               <div className="hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
                   <li>
-                    <NavLink to="/resume" className={({ isActive }) =>
-                      `transition-all duration-200 ${isActive ? "border-b-2 border-primary" : ""}`}>
-                      Resume
+                    <NavLink
+                   
+                      className={({ isActive }) =>
+                        `transition-all duration-200 relative ${
+                          isActive ? "border-b-2 border-primary" : ""
+                        }`
+                      }
+                    >
+                      <DownloadFullCV></DownloadFullCV>
+                   
                     </NavLink>
                   </li>
                 </ul>
               </div>
               {/* Small screen: hamburger */}
               <div className="lg:hidden">
-                <label htmlFor="my-drawer-3" className="btn btn-square btn-ghost">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none"
-                    viewBox="0 0 24 24" className="inline-block h-6 w-6 stroke-current">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
-                      d="M4 6h16M4 12h16M4 18h16"></path>
+                <label
+                  htmlFor="my-drawer-3"
+                  className="btn btn-square btn-ghost"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    className="inline-block h-6 w-6 stroke-current"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M4 6h16M4 12h16M4 18h16"
+                    ></path>
                   </svg>
                 </label>
               </div>
@@ -88,22 +126,34 @@ const RootLayout = () => {
           <label htmlFor="my-drawer-3" className="drawer-overlay"></label>
           <ul className="menu z-[60] w-3/4 max-w-xs bg-base-200 p-4 pt-10 h-full">
             <li className="z-50">
-              <NavLink to="/" className={({ isActive }) => (isActive ? "font-semibold" : "")}>
+              <NavLink
+                to="/"
+                className={({ isActive }) => (isActive ? "font-semibold" : "")}
+              >
                 Home
               </NavLink>
             </li>
             <li>
-              <NavLink to="/about" className={({ isActive }) => (isActive ? "font-semibold" : "")}>
+              <NavLink
+                to="/about"
+                className={({ isActive }) => (isActive ? "font-semibold" : "")}
+              >
                 About
               </NavLink>
             </li>
             <li>
-              <NavLink to="/contact" className={({ isActive }) => (isActive ? "font-semibold" : "")}>
+              <NavLink
+                to="/contact"
+                className={({ isActive }) => (isActive ? "font-semibold" : "")}
+              >
                 Contact
               </NavLink>
             </li>
             <li>
-              <NavLink to="/resume" className={({ isActive }) => (isActive ? "font-semibold" : "")}>
+              <NavLink
+                to="/resume"
+                className={({ isActive }) => (isActive ? "font-semibold" : "")}
+              >
                 Resume
               </NavLink>
             </li>
