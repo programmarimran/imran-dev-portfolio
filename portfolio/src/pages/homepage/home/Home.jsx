@@ -15,7 +15,7 @@ const Home = () => {
         <HeroSection></HeroSection>
       </div>
       {/* //ScrollToSectionButton */}
-      <div className=" sticky top-17 z-50 opacity-50 hover:opacity-500">
+      <div className=" sticky top-22 z-50  hover:opacity-500">
         <ScrollToSectionButton></ScrollToSectionButton>
       </div>
       <div>

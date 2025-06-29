@@ -13,11 +13,12 @@ const ScrollToSectionButton = () => {
         {sections.map((sec, i) => (
           <li key={i}>
             <button
-              onClick={() => scrollToSection(sec.replace(/\s/g, ""))}
-              className="px-4 py-2 bg-purple-600 text-white rounded hover:bg-purple-700 transition-all"
-            >
-              {sec}
-            </button>
+        key={i}
+        onClick={() => scrollToSection(sec.replace(/\s/g, ""))}
+        className="bg-white/10  hover:bg-purple-700 text-white px-4 py-2 rounded-full text-sm backdrop-blur-sm transition-all duration-200"
+      >
+        {sec}
+      </button>
           </li>
         ))}
       </ul>

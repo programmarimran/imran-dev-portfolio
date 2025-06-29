@@ -71,7 +71,7 @@ const ContactSection = () => {
             <h3 className="card-title mx-auto text-white">
               Contact Information
             </h3>
-            <div className="mt-4 bg-gray-100 rounded-lg p-4 space-y-2 text-gray-800">
+            <div className="mt-4 bg-gray-100 rounded-lg p-6 space-y-2 text-gray-800">
               <p>📧 programmarimran@gmail.com</p>
               <p>📞 +8801715994657</p>
               <p className="flex items-center gap-2">

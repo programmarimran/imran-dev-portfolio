@@ -27,146 +27,152 @@ const ProjectDetails = () => {
   };
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-8">
-      {/* Sidebar Navigation */}
-      <aside className="mb-6 flex flex-wrap gap-2 justify-center md:justify-start">
-        {sections.map((sec, idx) => (
-          <button
-            key={idx}
-            onClick={() => scrollToSection(sec.replace(/\s/g, ""))}
-            className="bg-purple-100 hover:bg-purple-200 text-purple-800 px-4 py-1 rounded-full text-sm"
-          >
-            {sec}
-          </button>
-        ))}
-      </aside>
-
-      {/* Overview Section */}
-      <motion.section
-        id="Overview"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.4 }}
-        className="space-y-4 mb-12"
+  <div className="max-w-6xl mx-auto px-4 py-10 text-white">
+  {/* Navigation */}
+  <aside className="mb-8 flex flex-wrap gap-3 justify-center z-50 sticky top-22 items-center md:justify-center">
+    {sections.map((sec, idx) => (
+      <button
+        key={idx}
+        onClick={() => scrollToSection(sec.replace(/\s/g, ""))}
+        className="bg-white/10  hover:bg-purple-700 text-white px-4 py-2 rounded-full text-sm backdrop-blur-sm transition-all duration-200"
       >
-        <h1 className="text-3xl font-bold">{project.title}</h1>
-        <p className="text-gray-700">{project.longDescription}</p>
-        <div className="space-x-4">
-          <a
-            href={project.liveLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-blue-600 underline"
-          >
-            Live Site
-          </a>
-          <a
-            href={project.githubLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-blue-600 underline"
-          >
-            GitHub
-          </a>
-        </div>
-      </motion.section>
+        {sec}
+      </button>
+    ))}
+  </aside>
 
-      {/* Features Section */}
-      <motion.section
-        id="Features"
-        initial={{ x: -50, opacity: 0 }}
-        whileInView={{ x: 0, opacity: 1 }}
-        transition={{ duration: 0.4 }}
-        className="mb-12"
-      >
-        <h2 className="text-2xl font-semibold mb-2">Features</h2>
-        <ul className="list-disc list-inside text-gray-800 space-y-1">
-          {project.features.map((feature, i) => (
-            <li key={i}>{feature}</li>
-          ))}
-        </ul>
-      </motion.section>
+  {/* Reusable Section Wrapper */}
+  {/** Custom Component or map later if preferred **/}
 
-      {/* Tech Stack Section */}
-      <motion.section
-        id="TechStack"
-        initial={{ x: 50, opacity: 0 }}
-        whileInView={{ x: 0, opacity: 1 }}
-        transition={{ duration: 0.4 }}
-        className="mb-12"
+  {/* Overview */}
+  <motion.section
+    id="Overview"
+    initial={{ opacity: 0 }}
+    whileInView={{ opacity: 1 }}
+    transition={{ duration: 0.4 }}
+    className="bg-white/10 backdrop-blur-md p-6 md:p-8 rounded-2xl shadow-lg mb-10 space-y-4"
+  >
+    <h1 className="text-4xl font-bold text-primary-content">{project.title}</h1>
+    <p className="text-white/90">{project.longDescription}</p>
+    <div className="space-x-4">
+      <a
+        href={project.liveLink}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="underline text-green-300 hover:text-green-400"
       >
-        <h2 className="text-2xl font-semibold mb-2">Tech Stack</h2>
-        <div className="flex flex-wrap gap-2">
-          {project.techStack.map((tech, i) => (
-            <span
-              key={i}
-              className="bg-gray-200 px-3 py-1 rounded-full text-sm text-gray-700"
-            >
-              {tech}
-            </span>
-          ))}
-        </div>
-      </motion.section>
-
-      {/* Challenges & Solutions Section */}
-      <motion.section
-        id="Challenges"
-        initial={{ y: 50, opacity: 0 }}
-        whileInView={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.4 }}
-        className="mb-12"
+        🔗 Live Site
+      </a>
+      <a
+        href={project.githubLink}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="underline text-blue-300 hover:text-blue-400"
       >
-        <h2 className="text-2xl font-semibold mb-2">Challenges & Solutions</h2>
-        <div className="space-y-4">
-          {project.challenges.map((challenge, i) => (
-            <div key={i}>
-              <p className="font-medium">🔹 Challenge: {challenge}</p>
-              <p className="ml-4 text-sm text-gray-600">
-                ✅ Solution: {project.solutions[i]}
-              </p>
-            </div>
-          ))}
-        </div>
-      </motion.section>
-
-      {/* Future Plans Section */}
-      <motion.section
-        id="FuturePlans"
-        initial={{ scale: 0.9, opacity: 0 }}
-        whileInView={{ scale: 1, opacity: 1 }}
-        transition={{ duration: 0.4 }}
-        className="mb-12"
-      >
-        <h2 className="text-2xl font-semibold mb-2">Future Plans</h2>
-        <ul className="list-disc list-inside text-gray-700 space-y-1">
-          {project.futurePlans.map((plan, i) => (
-            <li key={i}>{plan}</li>
-          ))}
-        </ul>
-      </motion.section>
-
-      {/* Screenshot Gallery Section */}
-      <motion.section
-        id="Screenshots"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.4 }}
-      >
-        <h2 className="text-2xl font-semibold mb-2">Screenshots</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          {project.screenshots.map((src, i) => (
-            <img
-              key={i}
-              src={src}
-              alt={`Screenshot ${i + 1}`}
-              className="rounded-lg shadow-md"
-            />
-          ))}
-        </div>
-      </motion.section>
-      {/* scrool to top  */}
-      <ScrollToTopButton></ScrollToTopButton>
+        💻 GitHub
+      </a>
     </div>
+  </motion.section>
+
+  {/* Features */}
+  <motion.section
+    id="Features"
+    initial={{ x: -50, opacity: 0 }}
+    whileInView={{ x: 0, opacity: 1 }}
+    transition={{ duration: 0.4 }}
+    className="bg-white/10 backdrop-blur-md p-6 md:p-8 rounded-2xl shadow-lg mb-10"
+  >
+    <h2 className="text-3xl font-semibold mb-4 text-primary-content">🚀 Features</h2>
+    <ul className="list-disc list-inside space-y-1 text-white/90">
+      {project.features.map((feature, i) => (
+        <li key={i}>{feature}</li>
+      ))}
+    </ul>
+  </motion.section>
+
+  {/* Tech Stack */}
+  <motion.section
+    id="TechStack"
+    initial={{ x: 50, opacity: 0 }}
+    whileInView={{ x: 0, opacity: 1 }}
+    transition={{ duration: 0.4 }}
+    className="bg-white/10 backdrop-blur-md p-6 md:p-8 rounded-2xl shadow-lg mb-10"
+  >
+    <h2 className="text-3xl font-semibold mb-4 text-primary-content">🛠 Tech Stack</h2>
+    <div className="flex flex-wrap gap-3">
+      {project.techStack.map((tech, i) => (
+        <span
+          key={i}
+          className="bg-white/20 text-white px-4 py-1 rounded-full text-sm"
+        >
+          {tech}
+        </span>
+      ))}
+    </div>
+  </motion.section>
+
+  {/* Challenges */}
+  <motion.section
+    id="Challenges"
+    initial={{ y: 50, opacity: 0 }}
+    whileInView={{ y: 0, opacity: 1 }}
+    transition={{ duration: 0.4 }}
+    className="bg-white/10 backdrop-blur-md p-6 md:p-8 rounded-2xl shadow-lg mb-10"
+  >
+    <h2 className="text-3xl font-semibold mb-4 text-primary-content">⚔️ Challenges & Solutions</h2>
+    <div className="space-y-4">
+      {project.challenges.map((challenge, i) => (
+        <div key={i} className="text-white/90">
+          <p className="font-semibold">🔹 {challenge}</p>
+          <p className="ml-4 text-sm text-green-200">
+            ✅ {project.solutions[i]}
+          </p>
+        </div>
+      ))}
+    </div>
+  </motion.section>
+
+  {/* Future Plans */}
+  <motion.section
+    id="FuturePlans"
+    initial={{ scale: 0.9, opacity: 0 }}
+    whileInView={{ scale: 1, opacity: 1 }}
+    transition={{ duration: 0.4 }}
+    className="bg-white/10 backdrop-blur-md p-6 md:p-8 rounded-2xl shadow-lg mb-10"
+  >
+    <h2 className="text-3xl font-semibold mb-4 text-primary-content">📈 Future Plans</h2>
+    <ul className="list-disc list-inside space-y-1 text-white/90">
+      {project.futurePlans.map((plan, i) => (
+        <li key={i}>{plan}</li>
+      ))}
+    </ul>
+  </motion.section>
+
+  {/* Screenshots */}
+  <motion.section
+    id="Screenshots"
+    initial={{ opacity: 0 }}
+    whileInView={{ opacity: 1 }}
+    transition={{ duration: 0.4 }}
+    className="bg-white/10 backdrop-blur-md p-6 md:p-8 rounded-2xl shadow-lg mb-10"
+  >
+    <h2 className="text-3xl font-semibold mb-4 text-primary-content">🖼 Screenshots</h2>
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+      {project.screenshots.map((src, i) => (
+        <img
+          key={i}
+          src={src}
+          alt={`Screenshot ${i + 1}`}
+          className="rounded-xl shadow-md border border-white/20 hover:scale-105 transition-all duration-300"
+        />
+      ))}
+    </div>
+  </motion.section>
+
+  {/* Scroll to top */}
+  <ScrollToTopButton />
+</div>
+
   );
 };
 
