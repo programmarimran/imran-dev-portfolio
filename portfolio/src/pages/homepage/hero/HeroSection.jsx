@@ -6,7 +6,7 @@ import { BorderBeam } from "@stianlarsen/border-beam";
 
 const HeroSection = () => {
   return (
-    <section className="min-h-screen flex flex-col-reverse md:flex-row items-center justify-between gap-10 px-6 md:px-16 py-12  text-white">
+    <section className="max-h-[1000px] my-12 border-4 rounded-2xl border-[#a878d8] min-h-screen md:min-h-[90vh] lg:min-h-[50vh]  flex flex-col-reverse md:flex-row items-center justify-between gap-10 px-6 md:px-16 py-12  text-white">
       {/* Left content */}
       <div className="w-full md:w-1/2 flex flex-col gap-6">
       <h1 className="text-4xl md:text-3xl font-bold leading-tight text-shadow">

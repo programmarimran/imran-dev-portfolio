@@ -7,7 +7,7 @@
   name: "dark";
   default: true;
   --color-primary: green;
-  --color-secondary: teal;
+  --color-secondary: #3b82f6;
 }
 
 /* @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *)); */

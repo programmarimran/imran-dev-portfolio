@@ -6,11 +6,11 @@ import DownloadFullCV from "../components/pdfCreator/DownloadFullCV";
 const RootLayout = () => {
   return (
     <>
-      <div className="drawer bg-gradient-to-bl from-[#323436] to-[#7851a0] text-white drawer-end">
+      <div className="drawer bg-gradient-to-bl from-[#8742bc] to-[#36174b] text-white drawer-end">
         <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
-        <div className="drawer-content z-10 flex flex-col">
+        <div className="drawer-content flex flex-col">
           {/* Navbar */}
-          <div className="navbar  w-full justify-between">
+          <div className="navbar z-50 bg-[#a878d8]  sticky top-0 w-full justify-between">
             {/* Left: logo+name */}
             <div className="flex items-center gap-2 px-2">
               <NavLink to="/" className="flex items-center gap-2">
@@ -107,8 +107,8 @@ const RootLayout = () => {
 
           {/* Page content */}
           {/* <main className="bg-[#70e00010]"> */}
-          <main className="bg-[#70e00010]">
-            <section className="max-w-7xl mx-auto">
+          <main className="">
+            <section className="max-w-[1440px] mx-auto">
               <div className="w-11/12 mx-auto min-h-[calc(100vh-120px)]">
                 <Outlet />
               </div>
@@ -116,7 +116,7 @@ const RootLayout = () => {
           </main>
 
           {/* Footer */}
-          <footer className="bg-base-300 text-center p-4 mt-auto">
+          <footer className="bg-[#a878d8] text-center p-4 mt-auto">
             © 2025 Md Imran Hasan. All rights reserved.
           </footer>
         </div>

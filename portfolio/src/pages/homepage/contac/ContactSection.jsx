@@ -1,0 +1,113 @@
+import React from "react";
+import { useForm } from "react-hook-form";
+import emailjs from "emailjs-com";
+
+const ContactSection = () => {
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors, isSubmitting }
+  } = useForm();
+
+  const onSubmit = async (data) => {
+    try {
+      await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        
+        data,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      );
+      alert("✅ Message sent successfully!");
+      reset();
+    } catch (error) {
+      console.log(error)
+      alert("❌ Failed to send message.");
+    }
+  };
+
+  return (
+    <section className="max-w-5xl mx-auto my-12 px-4">
+      <h2 className="text-center text-3xl font-bold mb-8">Contact</h2>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {/* Contact Information */}
+        <div className="card bg-[#5a4f85] shadow-xl border">
+          <div className="card-body">
+            <h3 className="card-title mx-auto text-white">Contact Information</h3>
+            <div className="mt-4 bg-gray-100 rounded-lg p-4 space-y-2 text-gray-800">
+              <p>📧 imran@example.com</p>
+              <p>📞 +880123456789</p>
+              <p>🏠 Gazipur, Bangladesh</p>
+              <p>🌐 www.imran.dev</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Contact Form */}
+        <div className="card bg-[#5a4f85] shadow-xl border">
+          <div className="card-body">
+            <form
+              onSubmit={handleSubmit(onSubmit)}
+              className="flex flex-col space-y-4"
+              noValidate
+            >
+              <input
+                type="text"
+                placeholder="Your Name"
+                {...register("from_name", { required: "Name is required" })}
+                className={`input bg-gray-100 input-bordered w-full text-gray-800 ${
+                  errors.from_name ? "border-red-500" : ""
+                }`}
+              />
+              {errors.from_name && (
+                <p className="text-red-500 text-sm">{errors.from_name.message}</p>
+              )}
+
+              <input
+                type="email"
+                placeholder="Your Email"
+                {...register("from_email", {
+                  required: "Email is required",
+                  pattern: {
+                    value: /^\S+@\S+$/i,
+                    message: "Invalid email address",
+                  },
+                })}
+                className={`input bg-gray-100 input-bordered w-full text-gray-800 ${
+                  errors.from_email ? "border-red-500" : ""
+                }`}
+              />
+              {errors.from_email && (
+                <p className="text-red-500 text-sm">{errors.from_email.message}</p>
+              )}
+
+              <textarea
+                placeholder="Your Message"
+                rows="4"
+                {...register("message", { required: "Message is required" })}
+                className={`textarea bg-gray-100 textarea-bordered w-full text-gray-800 ${
+                  errors.message ? "border-red-500" : ""
+                }`}
+              />
+              {errors.message && (
+                <p className="text-red-500 text-sm">{errors.message.message}</p>
+              )}
+
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="btn btn-success text-white"
+              >
+                {isSubmitting ? "Sending..." : "Send Email"}
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default ContactSection;
