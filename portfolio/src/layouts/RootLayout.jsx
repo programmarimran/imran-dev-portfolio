@@ -67,17 +67,13 @@ const RootLayout = () => {
               <div className="hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
                   <li>
-                    <NavLink
-                   
-                      className={({ isActive }) =>
-                        `transition-all duration-200 relative ${
-                          isActive ? "border-b-2 border-primary" : ""
-                        }`
-                      }
+                    <a
+                      href="/resume.pdf"
+                      download="resume.pdf"
+                      className="btn btn-primary"
                     >
-                      <DownloadFullCV></DownloadFullCV>
-                   
-                    </NavLink>
+                      Resume
+                    </a>
                   </li>
                 </ul>
               </div>
@@ -150,12 +146,13 @@ const RootLayout = () => {
               </NavLink>
             </li>
             <li>
-              <NavLink
-                to="/resume"
-                className={({ isActive }) => (isActive ? "font-semibold" : "")}
+              <a
+                href="/resume.pdf"
+                download="resume.pdf"
+                className="btn btn-primary"
               >
-                Resume
-              </NavLink>
+                Download My CV
+              </a>
             </li>
           </ul>
         </div>

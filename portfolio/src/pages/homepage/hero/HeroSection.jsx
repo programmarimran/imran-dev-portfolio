@@ -6,12 +6,12 @@ import { BorderBeam } from "@stianlarsen/border-beam";
 
 const HeroSection = () => {
   return (
-    <section className="max-h-[1000px] my-12 border-4 rounded-2xl border-[#a878d8] min-h-screen md:min-h-[90vh] lg:min-h-[50vh]  flex flex-col-reverse md:flex-row items-center justify-between gap-10 px-6 md:px-16 py-12  text-white">
+    <section className="max-h-[1000px] my-12 border-4 rounded-2xl border-[#a878d8]  flex flex-col-reverse md:flex-row items-center justify-between gap-10 px-6 md:px-16 py-12  text-white">
       {/* Left content */}
       <div className="w-full md:w-1/2 flex flex-col gap-6">
-      <h1 className="text-4xl md:text-3xl font-bold leading-tight text-shadow">
-  Hi, I’m <span className="text-primary">Md Imran Hasan</span>
-</h1>
+        <h1 className="text-4xl md:text-3xl font-bold leading-tight text-shadow">
+          Hi, I’m <span className="text-primary">Md Imran Hasan</span>
+        </h1>
 
         <h2 className="text-xl text-shadow font-medium text-gray-300">
           React & MERN Stack Developer
@@ -30,7 +30,7 @@ const HeroSection = () => {
             rel="noopener noreferrer"
             className="text-white hover:text-primary text-xl"
           >
-            <FaGithub />
+            <FaGithub size={25} />
           </a>
           <a
             href="https://www.linkedin.com/in/md-imran-hasan-664907354/"
@@ -38,7 +38,7 @@ const HeroSection = () => {
             rel="noopener noreferrer"
             className="text-white hover:text-primary text-xl"
           >
-            <FaLinkedin />
+            <FaLinkedin size={25} />
           </a>
           <a
             href="https://x.com/imranhasan72751"
@@ -46,7 +46,7 @@ const HeroSection = () => {
             rel="noopener noreferrer"
             className="text-white hover:text-primary text-xl"
           >
-            <FaTwitter/>
+            <FaTwitter size={25} />
           </a>
         </div>
 
@@ -56,18 +56,11 @@ const HeroSection = () => {
 
           {/* Button */}
           <a
-            href="/resume.pdf" 
-            download
-            className="relative z-10 mt-4 inline-flex items-center gap-2 px-5 py-2 rounded-lg bg-primary text-white font-medium hover:bg-primary/90 transition"
+            href="/resume.pdf"
+            download="resume.pdf"
+            className="btn btn-primary"
           >
-            <BorderBeam
-              colorFrom="#800080"
-              colorTo="#ffff00"
-              size={200}
-              duration={4}
-              className="rounded-lg"
-            />
-            <FiDownload /> <DownloadFullCV />
+            Download My CV
           </a>
         </div>
       </div>

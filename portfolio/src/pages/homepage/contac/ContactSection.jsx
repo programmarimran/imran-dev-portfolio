@@ -2,6 +2,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import emailjs from "emailjs-com";
 import Swal from "sweetalert2";
+import { FaWhatsapp } from "react-icons/fa";
 
 const ContactSection = () => {
   const {
@@ -39,7 +40,7 @@ const ContactSection = () => {
       Swal.fire({
         icon: "success",
         title: "Message Sent!",
-        text: "Thanks for reaching out. We've received your message and sent a confirmation email.",
+        text: `Thanks for reaching out. We've received your message and sent a confirmation email: "${replyData.user_email}" .`,
         confirmButtonText: "Great!",
         confirmButtonColor: "#5a4f85",
       });
@@ -61,7 +62,7 @@ const ContactSection = () => {
 
   return (
     <section className="max-w-5xl mx-auto my-12 px-4">
-      <h2 className="text-center text-3xl font-bold mb-8">Contact</h2>
+      <h2 className="text-3xl md:text-4xl font-bold text-center text-primary mb-10">Contact</h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* Contact Information */}
@@ -71,10 +72,21 @@ const ContactSection = () => {
               Contact Information
             </h3>
             <div className="mt-4 bg-gray-100 rounded-lg p-4 space-y-2 text-gray-800">
-              <p>📧 imran@example.com</p>
-              <p>📞 +880123456789</p>
+              <p>📧 programmarimran@gmail.com</p>
+              <p>📞 +8801715994657</p>
+              <p className="flex items-center gap-2">
+                <FaWhatsapp className="text-green-500" />
+                <a target="blank" href="https://wa.me/+8801715994657">
+                  +8801715994657
+                </a>
+              </p>
+              <p>
+                🌐{" "}
+                <a target="blank" href="https://imran-dev-portfolio.web.app">
+                  www.portfolio.com
+                </a>
+              </p>
               <p>🏠 Gazipur, Bangladesh</p>
-              <p>🌐 www.imran.dev</p>
             </div>
           </div>
         </div>
@@ -136,7 +148,7 @@ const ContactSection = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="btn btn-success text-white"
+                className="btn btn-primary text-white"
               >
                 {isSubmitting ? "Sending..." : "Send Email"}
               </button>
