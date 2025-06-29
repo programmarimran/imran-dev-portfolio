@@ -13,7 +13,8 @@ const ProjectDetailsDEMO = ({project}) => {
     id,
   } = project;
   return (
-    <div className="flex flex-col md:flex-row bg-[#5a4f85] shadow-xl rounded-box overflow-hidden p-4 mb-6">
+    <div data-aos="fade-up"
+     data-aos-anchor-placement="center-bottom" className="flex flex-col md:flex-row bg-[#5a4f85] shadow-xl rounded-box overflow-hidden p-4 mb-6">
       <figure className="md:w-1/2">
         <img
           src={image}

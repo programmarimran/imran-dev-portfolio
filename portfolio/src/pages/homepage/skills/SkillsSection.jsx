@@ -1,5 +1,6 @@
 import React from "react";
-
+// eslint-disable-next-line no-unused-vars
+import { motion } from "framer-motion";
 // Example images URLs — replace with your own logo paths or URLs
 const techSkills = [
   {
@@ -38,31 +39,40 @@ const techSkills = [
     name: "Tailwind CSS",
     img: "https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg",
   },
- {
-  name: "DaisyUI",
-  img: "https://i.ibb.co/SDn2rBcp/Screenshot-2025-06-29-025401-removebg-preview.png"
-}
-,
+  {
+    name: "DaisyUI",
+    img: "https://i.ibb.co/SDn2rBcp/Screenshot-2025-06-29-025401-removebg-preview.png",
+  },
   {
     name: "Vite",
     img: "https://vitejs.dev/logo.svg",
   },
 ];
 
-
 const SkillsSection = () => {
   return (
     <section className="max-w-6xl mx-auto p-6">
-      <h2 className="text-3xl text-shadow font-bold mb-8 text-center text-primary">Skills & Technologies</h2>
+      <h2 className="text-3xl text-shadow font-bold mb-8 text-center text-primary">
+        Skills & Technologies
+      </h2>
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
         {techSkills.map((tech) => (
-          <div
+          <motion.div
+            initial={{ x: 50, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.4 }}
+            data-aos="fade-up"
+            data-aos-anchor-placement="center-bottom"
             key={tech.name}
-            className="card flex flex-col items-center p-4 bg-[#5a4f85] rounded-lg shadow hover:shadow-lg transition-shadow cursor-pointer"
+            className="card flex flex-col items-center p-4 bg-[#5a4f85] rounded-lg shadow hover:shadow-lg transition-shadow cursor-pointer hover:scale-105  duration-400"
           >
-            <img src={tech.img} alt={tech.name} className="w-16 h-16 object-contain mb-3" />
+            <img
+              src={tech.img}
+              alt={tech.name}
+              className="w-16 h-16 object-contain mb-3"
+            />
             <p className="text-lg font-semibold">{tech.name}</p>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>

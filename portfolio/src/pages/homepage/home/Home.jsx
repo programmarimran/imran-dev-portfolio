@@ -18,7 +18,8 @@ const Home = () => {
       <div className=" sticky top-22 z-50  hover:opacity-500">
         <ScrollToSectionButton></ScrollToSectionButton>
       </div>
-      <div>
+      <div  data-aos="fade-up"
+     data-aos-anchor-placement="center-bottom">
         <AboutMe></AboutMe>
       </div>
       <section id="Skills">

@@ -62,11 +62,18 @@ const ContactSection = () => {
 
   return (
     <section className="max-w-5xl mx-auto my-12 px-4">
-      <h2 className="text-3xl md:text-4xl font-bold text-center text-primary mb-10">Contact</h2>
+      <h2 className="text-3xl md:text-4xl font-bold text-center text-primary mb-10">
+        Contact
+      </h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* Contact Information */}
-        <div className="card bg-[#5a4f85] shadow-xl border">
+        <div
+          data-aos="fade-right"
+          data-aos-offset="300"
+          data-aos-easing="ease-in-sine"
+          className="card bg-[#5a4f85] shadow-xl border"
+        >
           <div className="card-body">
             <h3 className="card-title mx-auto text-white">
               Contact Information
@@ -92,7 +99,13 @@ const ContactSection = () => {
         </div>
 
         {/* Contact Form */}
-        <div className="card bg-[#5a4f85] shadow-xl border">
+        <div
+          data-aos="fade-left"
+          data-aos-anchor="#example-anchor"
+          data-aos-offset="500"
+          data-aos-duration="500"
+          className="card bg-[#5a4f85] shadow-xl border"
+        >
           <div className="card-body">
             <form
               onSubmit={handleSubmit(onSubmit)}

@@ -27,7 +27,8 @@ const EducationSection = () => {
 
       <div className="grid gap-6 md:grid-cols-2">
         {educations.map((edu, index) => (
-          <div
+          <div data-aos="fade-up"
+     data-aos-anchor-placement="center-bottom"
             key={index}
             className="card bg-[#5a4f85] shadow-md border-l-4 border-primary p-6 hover:shadow-lg transition"
           >
