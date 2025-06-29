@@ -1,29 +1,61 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import emailjs from "emailjs-com";
+import Swal from "sweetalert2";
 
 const ContactSection = () => {
   const {
     register,
     handleSubmit,
     reset,
-    formState: { errors, isSubmitting }
+    formState: { errors, isSubmitting },
   } = useForm();
 
   const onSubmit = async (data) => {
+    const replyData = {
+      user_name: data.from_name,
+      user_email: data.from_email,
+    };
+    // console.log("Sending to:", data.from_email);
+
     try {
+      // Send to admin
       await emailjs.send(
         import.meta.env.VITE_EMAILJS_SERVICE_ID,
         import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-        
         data,
         import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       );
-      alert("✅ Message sent successfully!");
+
+      // Send auto-reply to user
+      await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_REPLY_TEMPLATE_ID,
+        replyData,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      );
+
+      // ✅ Success Message
+      Swal.fire({
+        icon: "success",
+        title: "Message Sent!",
+        text: "Thanks for reaching out. We've received your message and sent a confirmation email.",
+        confirmButtonText: "Great!",
+        confirmButtonColor: "#5a4f85",
+      });
+
       reset();
     } catch (error) {
-      console.log(error)
-      alert("❌ Failed to send message.");
+      console.log("EmailJS error:", error);
+
+      // ❌ Error Message
+      Swal.fire({
+        icon: "error",
+        title: "Oops!",
+        text: "Message not sent. Check email and retry.",
+        confirmButtonText: "Okay",
+        confirmButtonColor: "#dc3545",
+      });
     }
   };
 
@@ -35,7 +67,9 @@ const ContactSection = () => {
         {/* Contact Information */}
         <div className="card bg-[#5a4f85] shadow-xl border">
           <div className="card-body">
-            <h3 className="card-title mx-auto text-white">Contact Information</h3>
+            <h3 className="card-title mx-auto text-white">
+              Contact Information
+            </h3>
             <div className="mt-4 bg-gray-100 rounded-lg p-4 space-y-2 text-gray-800">
               <p>📧 imran@example.com</p>
               <p>📞 +880123456789</p>
@@ -62,7 +96,9 @@ const ContactSection = () => {
                 }`}
               />
               {errors.from_name && (
-                <p className="text-red-500 text-sm">{errors.from_name.message}</p>
+                <p className="text-red-500 text-sm">
+                  {errors.from_name.message}
+                </p>
               )}
 
               <input
@@ -71,7 +107,7 @@ const ContactSection = () => {
                 {...register("from_email", {
                   required: "Email is required",
                   pattern: {
-                    value: /^\S+@\S+$/i,
+                    value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, // Strict email regex
                     message: "Invalid email address",
                   },
                 })}
@@ -80,7 +116,9 @@ const ContactSection = () => {
                 }`}
               />
               {errors.from_email && (
-                <p className="text-red-500 text-sm">{errors.from_email.message}</p>
+                <p className="text-red-500 text-sm">
+                  {errors.from_email.message}
+                </p>
               )}
 
               <textarea
