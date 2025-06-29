@@ -1,9 +1,6 @@
 import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { FiDownload } from "react-icons/fi";
 import myPhoto from "../../../assets/heroimage.jpg";
-import DownloadFullCV from "../../../components/pdfCreator/DownloadFullCV";
-import { BorderBeam } from "@stianlarsen/border-beam";
-
 const HeroSection = () => {
   return (
     <section className="max-h-[1000px] my-12 border-4 rounded-2xl border-[#a878d8]  flex flex-col-reverse md:flex-row items-center justify-between gap-10 px-6 md:px-16 py-12  text-white">

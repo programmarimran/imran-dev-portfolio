@@ -1,7 +1,5 @@
 import { NavLink, Outlet } from "react-router";
 import logo from "../assets/logo.png";
-// import { BorderBeam } from "@stianlarsen/border-beam";
-import DownloadFullCV from "../components/pdfCreator/DownloadFullCV";
 
 const RootLayout = () => {
   return (
@@ -21,7 +19,7 @@ const RootLayout = () => {
 
             {/* Center: Home, About, Contact (only large screen) */}
             <div className="hidden lg:flex flex-1 justify-center">
-              <ul className="menu menu-horizontal px-1">
+              <ul className="menu menu-horizontal px-2 gap-2">
                 <li>
                   <NavLink
                     to="/"
@@ -36,26 +34,14 @@ const RootLayout = () => {
                 </li>
                 <li>
                   <NavLink
-                    to="/about"
+                    to="/projects"
                     className={({ isActive }) =>
                       `transition-all duration-200 ${
                         isActive ? "border-b-2 border-primary" : ""
                       }`
                     }
                   >
-                    About
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink
-                    to="/contact"
-                    className={({ isActive }) =>
-                      `transition-all duration-200 ${
-                        isActive ? "border-b-2 border-primary" : ""
-                      }`
-                    }
-                  >
-                    Contact
+                    Projects
                   </NavLink>
                 </li>
               </ul>
