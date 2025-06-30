@@ -3,16 +3,27 @@ import { Link, useParams } from "react-router";
 // import projectsData from "../../assets/data/projectsData";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
-import projectsData from "../../../assets/data/projects/projects";
-import ScrollToTopButton from "../../../components/ScrollToTopButton/ScrollToTopButton";
+import projectsData from "../../assets/data/projects/projects";
+import ScrollToTopButton from "../../components/ScrollToTopButton/ScrollToTopButton";
 import { FaCircleArrowLeft } from "react-icons/fa6";
+import { FaArrowLeft } from "react-icons/fa";
 
 const ProjectDetails = () => {
   const { id } = useParams();
   const project = projectsData.find((proj) => proj.id === Number(id));
 
   if (!project)
-    return <div className="text-center mt-10">Project not found.</div>;
+    return (
+      <div className=" flex flex-col items-center gap-12">
+        <h1 className="text-center mt-10">Project not found.</h1>
+        <Link
+          to={-1}
+          className="inline-flex items-center mx-auto gap-2 px-5 py-2 bg-purple-600 hover:bg-purple-700 transition rounded-md text-white font-medium"
+        >
+          <FaArrowLeft />Go Back 
+        </Link>
+      </div>
+    );
 
   const sections = [
     "Overview",
