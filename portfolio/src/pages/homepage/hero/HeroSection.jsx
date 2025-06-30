@@ -3,7 +3,7 @@ import { FiDownload } from "react-icons/fi";
 import myPhoto from "../../../assets/heroimage.jpg";
 const HeroSection = () => {
   return (
-    <section className="max-h-[1000px] my-12 border-4 rounded-2xl border-[#a878d8]  flex flex-col-reverse md:flex-row items-center justify-between gap-10 px-6 md:px-16 py-12  text-white">
+    <section className="max-h-[1000px] my-12 border-4 rounded-2xl border-[#a878d8]  flex flex-col-reverse md:flex-row items-center overflow-x-hidden justify-between gap-10 px-6 md:px-16 py-12  text-white">
       {/* Left content */}
       <div
         data-aos="fade-right"
@@ -14,16 +14,15 @@ const HeroSection = () => {
         <h1 className="text-4xl md:text-3xl font-bold leading-tight text-shadow">
           Hi, I’m <span className="text-primary">Md Imran Hasan</span>
         </h1>
-
         <h2 className="text-xl text-shadow font-medium text-gray-300">
           React & MERN Stack Developer
         </h2>
-        <h1 align="center">
+        {/* <h1 align="center">
           <img
             src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=28&duration=4000&pause=1000&color=F76C6C&width=800&lines=Assalamu+Alaikum+👋+I'm+Md+Imran+Hasan;MERN+Stack+Developer+from+Bangladesh;React+%7C+Node+%7C+Express+%7C+MongoDB;Always+learning+%7C+Open+to+Work"
             alt="Typing SVG"
           />
-        </h1>
+        </h1> */}
 
         <p className="text-base text-shadow text-gray-300">
           I build modern web apps using MongoDB, Express, React, and Node.js. I
@@ -68,13 +67,13 @@ const HeroSection = () => {
             download="resume.pdf"
             className="btn btn-primary"
           >
-            Download My CV
+           <FiDownload/> Download My CV
           </a>
         </div>
       </div>
 
       {/* Right image */}
-      <div data-aos="flip-down" className="w-full md:w-1/2 flex justify-center">
+      <div  className="w-full md:w-1/2 flex justify-center">
         <img
           src={myPhoto}
           alt="Md Imran Hasan"

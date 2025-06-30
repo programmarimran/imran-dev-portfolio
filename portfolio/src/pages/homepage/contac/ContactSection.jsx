@@ -71,7 +71,7 @@ const ContactSection = () => {
         Contact
       </h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 overflow-x-hidden md:grid-cols-2 gap-6">
         {/* Contact Information */}
         <div
           data-aos="fade-right"

@@ -55,16 +55,16 @@ const SkillsSection = () => {
       <h2 className="text-3xl text-shadow font-bold mb-8 text-center text-primary">
         Skills & Technologies
       </h2>
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+      <div className="grid grid-cols-2 overflow-x-hidden sm:grid-cols-3 md:grid-cols-4 gap-6">
         {techSkills.map((tech) => (
           <motion.div
-            initial={{ x: 50, opacity: 0 }}
+            initial={{ x:10, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.4 }}
             data-aos="fade-up"
             data-aos-anchor-placement="center-bottom"
             key={tech.name}
-            className="card flex flex-col items-center p-4 bg-[#5a4f85] rounded-lg shadow hover:shadow-lg transition-shadow cursor-pointer hover:scale-105  duration-400"
+            className="card  flex flex-col items-center p-4 bg-[#5a4f85] rounded-lg shadow hover:shadow-lg transition-shadow cursor-pointer hover:scale-105  duration-400"
           >
             <img
               src={tech.img}
