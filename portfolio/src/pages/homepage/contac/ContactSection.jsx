@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useRef } from "react";
 import { useForm } from "react-hook-form";
 import emailjs from "emailjs-com";
 import Swal from "sweetalert2";
 import { FaWhatsapp } from "react-icons/fa";
+import ReCAPTCHA from "react-google-recaptcha";
 
 const ContactSection = () => {
+  const recaptchaRef = useRef();
   const {
     register,
     handleSubmit,
@@ -89,7 +91,7 @@ const ContactSection = () => {
               </p>
               <p>
                 🌐{" "}
-                <a target="blank" href="https://imran-dev-portfolio.web.app">
+                <a target="blank" href="https://imran-dev-portfolio.vercel.app/">
                   www.portfolio.com
                 </a>
               </p>
@@ -157,7 +159,20 @@ const ContactSection = () => {
               {errors.message && (
                 <p className="text-red-500 text-sm">{errors.message.message}</p>
               )}
+              {/* ******recapta site ********* */}
+              <div className="w-full overflow-hidden">
+                <div className="scale-[0.90] sm:scale-100 origin-left">
+                  <ReCAPTCHA
+                    ref={recaptchaRef}
+                    sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}
+                    onChange={(token) => {
+                      console.log("Captcha value:", token);
+                    }}
+                  />
+                </div>
+              </div>
 
+              {/* ********** */}
               <button
                 type="submit"
                 disabled={isSubmitting}
