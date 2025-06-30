@@ -5,7 +5,9 @@ const HeroSection = () => {
   return (
     <section className="max-h-[1000px] my-12 border-4 rounded-2xl border-[#a878d8]  flex flex-col-reverse md:flex-row items-center justify-between gap-10 px-6 md:px-16 py-12  text-white">
       {/* Left content */}
-      <div className="w-full md:w-1/2 flex flex-col gap-6">
+      <div data-aos="fade-right"
+     data-aos-offset="300"
+     data-aos-easing="ease-in-sine" className="w-full md:w-1/2 flex flex-col gap-6">
         <h1 className="text-4xl md:text-3xl font-bold leading-tight text-shadow">
           Hi, I’m <span className="text-primary">Md Imran Hasan</span>
         </h1>
@@ -63,7 +65,7 @@ const HeroSection = () => {
       </div>
 
       {/* Right image */}
-      <div className="w-full md:w-1/2 flex justify-center">
+      <div data-aos="flip-down" className="w-full md:w-1/2 flex justify-center">
         <img
           src={myPhoto}
           alt="Md Imran Hasan"

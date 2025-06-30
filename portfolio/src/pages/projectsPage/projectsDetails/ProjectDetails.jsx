@@ -30,7 +30,7 @@ const ProjectDetails = () => {
   return (
     <div className="max-w-6xl mx-auto px-4 py-10 text-white">
       {/* Navigation */}
-      <aside className="mb-8 md:flex flex-wrap hidden  gap-3 justify-center z-50 sticky top-22 items-center md:justify-center">
+      <aside className="mb-8 md:flex flex-wrap   gap-3  z-50 sticky top-16 md:top-22  items-center md:justify-center">
         <Link to={-1}>
           <button className=" btn btn-primary">
             <FaCircleArrowLeft /> Go Back
@@ -40,7 +40,7 @@ const ProjectDetails = () => {
           <button
             key={idx}
             onClick={() => scrollToSection(sec.replace(/\s/g, ""))}
-            className="bg-white/10  hover:bg-purple-700 text-white px-4 py-2 rounded-full text-sm backdrop-blur-sm transition-all duration-200"
+            className="bg-white/10 hidden md:flex  hover:bg-purple-700 text-white px-4 py-2 rounded-full text-sm backdrop-blur-sm transition-all duration-200"
           >
             {sec}
           </button>
