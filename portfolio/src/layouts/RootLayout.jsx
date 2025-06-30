@@ -1,5 +1,6 @@
 import { NavLink, Outlet } from "react-router";
 import logo from "../assets/logo.png";
+import { FiDownload } from "react-icons/fi";
 
 const RootLayout = () => {
   return (
@@ -63,6 +64,7 @@ const RootLayout = () => {
                         download="resume.pdf"
                         className="btn btn-primary"
                       >
+                        <FiDownload />
                         Resume
                       </a>
                     </li>
@@ -147,7 +149,7 @@ const RootLayout = () => {
                     download="resume.pdf"
                     className="btn btn-primary"
                   >
-                    Download My CV
+                    <FiDownload /> Download My CV
                   </a>
                 </li>
               </ul>

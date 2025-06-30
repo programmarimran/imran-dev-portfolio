@@ -41,7 +41,7 @@ const ProjectDetails = () => {
   return (
     <div className="max-w-6xl mx-auto px-4 py-10 text-white">
       {/* Navigation */}
-      <aside className="mb-8 md:flex flex-wrap   gap-3  z-50 sticky top-16 md:top-22  items-center md:justify-center">
+      <aside className="mb-8 md:flex flex-wrap sticky top-16  gap-3  z-50   md:top-22  items-center md:justify-center">
         <Link to={-1}>
           <button className=" btn btn-primary">
             <FaCircleArrowLeft /> Go Back
@@ -96,7 +96,7 @@ const ProjectDetails = () => {
       {/* Features */}
       <motion.section
         id="Features"
-        initial={{ x: -50, opacity: 0 }}
+        initial={{ x: -25, opacity: 0 }}
         whileInView={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.4 }}
         className="bg-white/10 backdrop-blur-md p-6 md:p-8 rounded-2xl shadow-lg mb-10"
@@ -114,7 +114,7 @@ const ProjectDetails = () => {
       {/* Tech Stack */}
       <motion.section
         id="TechStack"
-        initial={{ x: 50, opacity: 0 }}
+        initial={{ x: 25, opacity: 0 }}
         whileInView={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.4 }}
         className="bg-white/10 backdrop-blur-md p-6 md:p-8 rounded-2xl shadow-lg mb-10"
@@ -137,7 +137,7 @@ const ProjectDetails = () => {
       {/* Challenges */}
       <motion.section
         id="Challenges"
-        initial={{ y: 50, opacity: 0 }}
+        initial={{ y: 25, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.4 }}
         className="bg-white/10 backdrop-blur-md p-6 md:p-8 rounded-2xl shadow-lg mb-10"

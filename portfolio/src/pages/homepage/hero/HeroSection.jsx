@@ -17,12 +17,12 @@ const HeroSection = () => {
         <h2 className="text-xl text-shadow font-medium text-gray-300">
           React & MERN Stack Developer
         </h2>
-        {/* <h1 align="center">
+        <h1 align="center">
           <img
             src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=28&duration=4000&pause=1000&color=F76C6C&width=800&lines=Assalamu+Alaikum+👋+I'm+Md+Imran+Hasan;MERN+Stack+Developer+from+Bangladesh;React+%7C+Node+%7C+Express+%7C+MongoDB;Always+learning+%7C+Open+to+Work"
             alt="Typing SVG"
           />
-        </h1> */}
+        </h1>
 
         <p className="text-base text-shadow text-gray-300">
           I build modern web apps using MongoDB, Express, React, and Node.js. I
