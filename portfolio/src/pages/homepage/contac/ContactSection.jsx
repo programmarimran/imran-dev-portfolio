@@ -49,7 +49,10 @@ const ContactSection = () => {
 
       reset();
     } catch (error) {
-      console.log("EmailJS error:", error);
+      if(error){
+        return ""
+      }
+      // console.log("EmailJS error:", error);
 
       // ❌ Error Message
       Swal.fire({
@@ -165,8 +168,8 @@ const ContactSection = () => {
                   <ReCAPTCHA
                     ref={recaptchaRef}
                     sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}
-                    onChange={(token) => {
-                      console.log("Captcha value:", token);
+                    onChange={() => {
+                      // console.log("Captcha value:", token);
                     }}
                   />
                 </div>
