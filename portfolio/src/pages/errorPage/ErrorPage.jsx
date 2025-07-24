@@ -16,6 +16,12 @@ const ErrorPage = () => {
       >
         <FaArrowLeft /> Back to Home
       </Link>
+      <Link
+        to="/"
+        className="inline-flex items-center gap-2 px-5 py-2 bg-purple-600 hover:bg-purple-700 transition rounded-md text-white font-medium"
+      >
+        <FaArrowLeft /> Back to Go
+      </Link>
     </div>
   );
 };
