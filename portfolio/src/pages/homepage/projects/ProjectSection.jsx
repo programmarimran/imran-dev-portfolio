@@ -7,8 +7,8 @@ export default function ProjectSection() {
     <div className="container mx-auto px-4 py-8">
       <h1 className="text-3xl md:text-4xl font-bold text-center text-primary mb-10">Projects</h1>
       <div className=" ">
-        {homeProjects.map((project) => (
-          <ProjectCard key={project.id} project={project} />
+        {homeProjects.map((project,index) => (
+          <ProjectCard key={project.id} index={index} project={project} />
         ))}
       </div>
     </div>

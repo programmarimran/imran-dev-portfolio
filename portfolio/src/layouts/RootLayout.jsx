@@ -1,4 +1,4 @@
-import { NavLink, Outlet } from "react-router";
+import { Link, NavLink, Outlet } from "react-router";
 import logo from "../assets/logo.png";
 import { FiDownload } from "react-icons/fi";
 import useScrollToSection from "../hooks/useScrollToSection";
@@ -11,7 +11,7 @@ const RootLayout = () => {
         <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content flex flex-col">
           {/* Navbar */}
-          <div className="  bg-black/70  backdrop-blur-xs sticky top-0 z-50 ">
+          <div id="nav" className="  bg-black/70  backdrop-blur-xs sticky top-0 z-50 ">
             <div className="max-w-[1440px] mx-auto navbar  w-full justify-between ">
               {/* Left: logo+name */}
               <div className="flex items-center gap-2 px-2">
@@ -28,29 +28,23 @@ const RootLayout = () => {
               {/* Center: Home, About, Contact (only large screen) */}
               <div className="hidden lg:flex flex-1 justify-center">
                 <ul className="menu menu-horizontal px-2 gap-2">
+                
+
                   <li>
-                    <NavLink
-                      to="/"
-                      className={({ isActive }) =>
-                        `transition-all duration-200 ${
-                          isActive ? "border-b-2 border-primary" : ""
-                        }`
-                      }
-                    >
+                    <button onClick={() => scrollToSection("hero")}>
                       Home
-                    </NavLink>
+                    </button>
+                  </li>
+
+                  <li>
+                    <button onClick={() => scrollToSection("Projects")}>
+                      Projects
+                    </button>
                   </li>
                   <li>
-                    <NavLink
-                      to="/projects"
-                      className={({ isActive }) =>
-                        `transition-all duration-200 ${
-                          isActive ? "border-b-2 border-primary" : ""
-                        }`
-                      }
-                    >
-                      Projects
-                    </NavLink>
+                    <button onClick={() => scrollToSection("Skills")}>
+                      Skills
+                    </button>
                   </li>
                   <li>
                     <button onClick={() => scrollToSection("About")}>
@@ -62,11 +56,7 @@ const RootLayout = () => {
                       Education
                     </button>
                   </li>
-                  <li>
-                    <button onClick={() => scrollToSection("Skills")}>
-                      Skills
-                    </button>
-                  </li>
+
                   <li>
                     <button onClick={() => scrollToSection("Contact")}>
                       Contact

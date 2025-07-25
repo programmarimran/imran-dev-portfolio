@@ -47,34 +47,37 @@ const techSkills = [
     name: "Vite",
     img: "https://vitejs.dev/logo.svg",
   },
+   {
+    name: "Next.js",
+    img: "https://raw.githubusercontent.com/devicons/devicon/master/icons/nextjs/nextjs-original.svg",
+  },
 ];
 
 const SkillsSection = () => {
   return (
     <section className="max-w-6xl mx-auto p-6">
-      <h2 className="text-3xl text-shadow font-bold mb-8 text-center text-primary">
+      <h2 className="text-3xl text-shadow font-bold mb-8 text-center text-white">
         Skills & Technologies
       </h2>
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
         {techSkills.map((tech) => (
-  <motion.div
-    key={tech.name}
-    initial={{ x: 30, opacity: 0 }}
-    whileInView={{ x: 0, opacity: 1 }}
-    transition={{ duration: 0.4 }}
-    data-aos="fade-up"
-    data-aos-anchor-placement="center-bottom"
-    className="card transform  duration-300 ease-in-out hover:scale-110 transition-shadow hover:shadow-2xl flex flex-col items-center p-4 bg-[#5a4f85] rounded-lg shadow cursor-pointer"
-  >
-    <img
-      src={tech.img}
-      alt={tech.name}
-      className="w-16 h-16 object-contain mb-3"
-    />
-    <p className="text-lg font-semibold">{tech.name}</p>
-  </motion.div>
-))}
-
+          <motion.div
+            key={tech.name}
+            initial={{ x: 30, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.4 }}
+            data-aos="fade-up"
+            data-aos-anchor-placement="center-bottom"
+            className="card transform  duration-300 ease-in-out hover:scale-110 transition-shadow hover:shadow-2xl flex flex-col items-center p-4 bg-black/90  rounded-lg shadow-2xs hover:shadow-amber-400 cursor-pointer"
+          >
+            <img
+              src={tech.img}
+              alt={tech.name}
+              className="w-16 h-16 shadow-2xl shadow-green-600 object-contain mb-3"
+            />
+            <p className="text-lg font-semibold">{tech.name}</p>
+          </motion.div>
+        ))}
       </div>
     </section>
   );

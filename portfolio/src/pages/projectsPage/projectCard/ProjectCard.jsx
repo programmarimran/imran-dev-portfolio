@@ -1,7 +1,6 @@
 import { Link } from "react-router";
 
-const ProjectCard = ({project}) => {
- 
+const ProjectCard = ({ project, index }) => {
   const {
     title,
     description,
@@ -12,10 +11,23 @@ const ProjectCard = ({project}) => {
     githubLink,
     id,
   } = project;
+
+  const isEven = index % 2 === 0;
+
   return (
-    <div data-aos="fade-up"
-     data-aos-anchor-placement="center-bottom" className="flex flex-col md:flex-row bg-[#5a4f85] shadow-xl rounded-box overflow-hidden p-4 mb-6">
-      <figure className="md:w-1/2">
+    <div
+      data-aos-anchor-placement="center-bottom"
+      className={`flex flex-col md:flex-row ${
+        isEven ? "" : "md:flex-row-reverse"
+      } shadow-xl rounded-box overflow-hidden p-4 mb-6`}
+    >
+      <figure
+        data-aos={isEven ? "fade-up" : "fade-down"}
+        data-aos-offset="300"
+        data-aos-easing="ease-in-sine"
+        data-aos-duration="5000"
+        className="md:w-1/2"
+      >
         <img
           src={image}
           alt={title}
@@ -23,7 +35,13 @@ const ProjectCard = ({project}) => {
         />
       </figure>
 
-      <div className="md:w-1/2 p-4 flex flex-col justify-between">
+      <div
+        data-aos={isEven ? "fade-down" : "fade-up"}
+        data-aos-offset="300"
+        data-aos-duration="5000"
+        data-aos-easing="ease-in-sine"
+        className="md:w-1/2 p-4 flex flex-col justify-between"
+      >
         <div>
           <h2 className="text-xl font-bold mb-2">{title}</h2>
           <p className="mb-4 hidden lg:flex">{description}</p>

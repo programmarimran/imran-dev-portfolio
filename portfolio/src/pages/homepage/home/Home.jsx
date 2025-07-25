@@ -6,23 +6,22 @@ import EducationSection from "../education/EducationSection";
 import ProjectSection from "../projects/ProjectSection";
 import ContactSection from "../contac/ContactSection";
 import ScrollToTopButton from "../../../components/ScrollToTopButton/ScrollToTopButton";
+import LearningExperienceSection from "../learningExperience/LearningExperienceSection";
 
 const Home = () => {
   return (
     <div>
-      <div>
+      <div id="hero" className="bg-black/90 rounded-lg ">
         <HeroSection></HeroSection>
       </div>
-      <section
-        id="About"
-        data-aos="fade-up"
-        data-aos-anchor-placement="center-bottom"
-        className=" overflow-x-hidden"
-      >
+      <section id="About" data-aos="fade-up" className=" rounded-lg ">
         <AboutMe></AboutMe>
       </section>
       <section id="Skills">
         <SkillsSection></SkillsSection>
+      </section>
+      <section>
+        <LearningExperienceSection/>
       </section>
       <section id="Education">
         <EducationSection></EducationSection>

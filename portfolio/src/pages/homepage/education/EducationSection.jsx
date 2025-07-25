@@ -1,43 +1,65 @@
 import React from "react";
+// eslint-disable-next-line no-unused-vars
+import { motion } from "framer-motion";
 
-const educations = [
-  {
+const EducationSection = () => {
+  const latestEducation = {
     degree: "B.S.S. (Honours), Political Science",
     institution: "Abdul Awal University College (NU Affiliated)",
     year: "2022 – Present",
-  },
-  {
-    degree: "Higher Secondary Certificate (HSC)",
-    institution: "Mymensingh Board",
-    year: "2022",
-  },
-  {
-    degree: "Secondary School Certificate (SSC)",
-    institution: "Mymensingh Board",
-    year: "2020",
-  },
-];
+    image:
+      "https://i.ibb.co/g2vTBVD/Whats-App-Image-2025-06-24-at-23-34-28-3f6e0c5e.jpg",
+  };
 
-const EducationSection = () => {
+  const programmingCourse = {
+    platform: "Programming Hero",
+    track: "Complete Web Development with MERN Stack",
+    duration: "March 2024 – Present",
+  };
+
   return (
-    <section className="max-w-5xl mx-auto px-6 py-12">
-      <h2 className="text-3xl md:text-4xl font-bold text-center text-primary mb-10">
+    <section className="max-w-6xl mx-auto px-4 py-12">
+      <h2 className="text-3xl md:text-4xl font-bold text-center  mb-10">
         Education
       </h2>
 
-      <div className="grid gap-6  md:grid-cols-2">
-        {educations.map((edu, index) => (
-          <div
-            data-aos="fade-up"
-            data-aos-anchor-placement="center-bottom"
-            key={index}
-            className="card bg-[#5a4f85] shadow-md border-l-4 border-primary p-6 hover:shadow-lg transition"
-          >
-            <h3 className="text-xl font-semibold text-white">{edu.degree}</h3>
-            <p className="text-sm text-gray-300">{edu.institution}</p>
-            <p className="text-sm text-gray-400">{edu.year}</p>
+      <div className="flex flex-col  md:flex-row-reverse  items-center justify-center  p-6 rounded-xl shadow-lg">
+        {/* Image Animation */}
+        <motion.img
+          initial={{ x: 50, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ duration: 1 }}
+          src={latestEducation.image}
+          alt="Education"
+          className="w-64 h-64 rounded-xl object-cover shadow-lg"
+        />
+
+        {/* Text Animation */}
+        <motion.div
+          initial={{ y: 50, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 1, delay: 0.3 }}
+          className="flex-1 space-y-4 text-white"
+        >
+          <div>
+            <h3 className="text-xl font-bold">{latestEducation.degree}</h3>
+            <p className="text-sm text-gray-300">
+              {latestEducation.institution}
+            </p>
+            <p className="text-sm text-gray-400">{latestEducation.year}</p>
           </div>
-        ))}
+
+          <div>
+            <p className="font-medium mt-2">Relevant Courses:</p>
+            <h4 className="text-lg font-semibold mt-6">
+              {programmingCourse.platform} Course
+            </h4>
+            <p className="text-sm text-gray-300">{programmingCourse.track}</p>
+            <p className="text-sm text-gray-400">
+              {programmingCourse.duration}
+            </p>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

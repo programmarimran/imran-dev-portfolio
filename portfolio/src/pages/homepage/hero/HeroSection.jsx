@@ -4,7 +4,7 @@ import myPhoto from "../../../assets/heroimage.jpg";
 
 const HeroSection = () => {
   return (
-    <section className="max-h-[1000px] my-12 px-6 bg-black/90 md:px-16 py-12 rounded-2xl flex flex-col-reverse md:flex-row items-center justify-between gap-10  text-white">
+    <section className="max-h-[1000px] my-12 px-6 md:px-16 py-12 rounded-2xl flex flex-col-reverse md:flex-row items-center justify-between gap-10  text-white">
       {/* Left Content */}
       <div className="w-full md:w-1/2 flex flex-col gap-6">
         <h1 className="text-4xl md:text-5xl font-bold leading-tight">
