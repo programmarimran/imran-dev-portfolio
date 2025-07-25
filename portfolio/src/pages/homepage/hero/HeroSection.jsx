@@ -29,22 +29,22 @@ const HeroSection = () => {
         </p>
 
         {/* Social Links */}
-        <div className="flex items-center gap-5 mt-2">
+        <div className="flex items-center gap-10 mt-2">
           <a
             href="https://github.com/programmarimran"
             target="_blank"
             rel="noopener noreferrer"
             className="text-white hover:text-primary"
           >
-            <FaGithub size={24} />
+            <FaGithub size={34} />
           </a>
           <a
-            href="https://www.linkedin.com/in/md-imran-hasan-664907354/"
+            href="https://www.linkedin.com/in/programmarimran/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-white hover:text-primary"
           >
-            <FaLinkedin size={24} />
+            <FaLinkedin size={34} />
           </a>
           <a
             href="https://x.com/imranhasan72751"
@@ -52,7 +52,7 @@ const HeroSection = () => {
             rel="noopener noreferrer"
             className="text-white hover:text-primary"
           >
-            <FaTwitter size={24} />
+            <FaTwitter size={34} />
           </a>
         </div>
 

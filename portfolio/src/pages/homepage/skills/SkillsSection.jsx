@@ -64,11 +64,12 @@ const SkillsSection = () => {
           <motion.div
             key={tech.name}
             initial={{ x: 30, opacity: 0 }}
+             whileHover={{ scale: 1.2, y: -5 }}
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.4 }}
             data-aos="fade-up"
             data-aos-anchor-placement="center-bottom"
-            className="card transform  duration-300 ease-in-out hover:scale-110 transition-shadow hover:shadow-2xl flex flex-col items-center p-4 bg-black/90  rounded-lg shadow-2xs hover:shadow-amber-400 cursor-pointer"
+            className="card transform  duration-300 ease-in-out  transition-shadow hover:shadow-2xl flex flex-col items-center p-4 bg-black/90  rounded-lg shadow-2xs hover:shadow-amber-400 cursor-pointer"
           >
             <img
               src={tech.img}
