@@ -1,12 +1,12 @@
-import React, { useRef } from "react";
+// import React, { useRef } from "react";
 import { useForm } from "react-hook-form";
 import emailjs from "emailjs-com";
 import Swal from "sweetalert2";
 import { FaWhatsapp } from "react-icons/fa";
-import ReCAPTCHA from "react-google-recaptcha";
+// import ReCAPTCHA from "react-google-recaptcha";
 
 const ContactSection = () => {
-  const recaptchaRef = useRef();
+  // const recaptchaRef = useRef();
   const {
     register,
     handleSubmit,
@@ -67,7 +67,7 @@ const ContactSection = () => {
 
   return (
     <section className="max-w-5xl mx-auto my-12 px-4">
-      <h2 className="text-3xl md:text-4xl font-bold text-center text-primary mb-10">
+      <h2 className="text-3xl md:text-4xl font-bold text-center  mb-10">
         Contact
       </h2>
 
@@ -77,13 +77,13 @@ const ContactSection = () => {
           data-aos="fade-right"
           data-aos-offset="300"
           data-aos-easing="ease-in-sine"
-          className="card bg-[#5a4f85] shadow-xl border"
+          className="card bg-black/50  shadow-xl "
         >
           <div className="card-body">
             <h3 className="card-title mx-auto text-white">
               Contact Information
             </h3>
-            <div className="mt-4 bg-gray-100 rounded-lg p-6 space-y-2 text-gray-800">
+            <div className="mt-4 bg-gray-300 rounded-lg p-6 space-y-2 text-gray-800">
               <p>📧 programmarimran@gmail.com</p>
               <p>📞 +8801715994657</p>
               <p className="flex items-center gap-2">
@@ -109,7 +109,7 @@ const ContactSection = () => {
           data-aos-anchor="#example-anchor"
           data-aos-offset="500"
           data-aos-duration="500"
-          className="card bg-[#5a4f85] shadow-xl border"
+          className="card bg-black/50  shadow-xl "
         >
           <div className="card-body">
             <form
@@ -121,7 +121,7 @@ const ContactSection = () => {
                 type="text"
                 placeholder="Your Name"
                 {...register("from_name", { required: "Name is required" })}
-                className={`input bg-gray-100 input-bordered w-full text-gray-800 ${
+                className={`input bg-gray-300 input-bordered w-full text-gray-800 ${
                   errors.from_name ? "border-red-500" : ""
                 }`}
               />
@@ -141,7 +141,7 @@ const ContactSection = () => {
                     message: "Invalid email address",
                   },
                 })}
-                className={`input bg-gray-100 input-bordered w-full text-gray-800 ${
+                className={`input bg-gray-300 input-bordered w-full text-gray-800 ${
                   errors.from_email ? "border-red-500" : ""
                 }`}
               />
@@ -155,7 +155,7 @@ const ContactSection = () => {
                 placeholder="Your Message"
                 rows="4"
                 {...register("message", { required: "Message is required" })}
-                className={`textarea bg-gray-100 textarea-bordered w-full text-gray-800 ${
+                className={`textarea bg-gray-300 textarea-bordered w-full text-gray-800 ${
                   errors.message ? "border-red-500" : ""
                 }`}
               />
@@ -163,7 +163,7 @@ const ContactSection = () => {
                 <p className="text-red-500 text-sm">{errors.message.message}</p>
               )}
               {/* ******recapta site ********* */}
-              <div className="w-full overflow-hidden">
+              {/* <div className="w-full overflow-hidden">
                 <div className="scale-[0.90] sm:scale-100 origin-left">
                   <ReCAPTCHA
                     ref={recaptchaRef}
@@ -173,7 +173,7 @@ const ContactSection = () => {
                     }}
                   />
                 </div>
-              </div>
+              </div> */}
 
               {/* ********** */}
               <button

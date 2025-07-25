@@ -62,7 +62,7 @@ const HeroSection = () => {
             href="https://drive.google.com/file/d/1vXu69-GoyTvlJS1GbMuUHi2uamKpx_8K/view"
             target="_blank"
             rel="noopener noreferrer"
-            className="btn btn-primary gap-2"
+            className="btn btn-primary border-none bg-gradient-to-r from-indigo-500 to-primary hover:from-primary/50 hover:to-indigo-500 gap-2"
           >
             <FiDownload /> Download Resume
           </a>
@@ -74,7 +74,7 @@ const HeroSection = () => {
         <img
           src={myPhoto}
           alt="Md Imran Hasan"
-          className="w-64 h-64 rounded-full border-4 border-primary object-cover shadow-lg"
+          className=" w-64 h-64 md:w-94 md:h-94 rounded-full border-4 border-primary object-cover shadow-lg"
         />
       </div>
     </section>

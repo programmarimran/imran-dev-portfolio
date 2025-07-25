@@ -74,7 +74,7 @@ const RootLayout = () => {
                       <a
                         href="https://drive.google.com/file/d/1vXu69-GoyTvlJS1GbMuUHi2uamKpx_8K/view"
                         target="_blank"
-                        className="btn btn-primary"
+                        className="btn btn-primary border-none bg-gradient-to-r from-indigo-500 to-primary hover:from-primary/50 hover:to-indigo-500"
                       >
                         <FiDownload />
                         Resume
@@ -159,7 +159,7 @@ const RootLayout = () => {
                   <a
                     href="https://drive.google.com/file/d/1vXu69-GoyTvlJS1GbMuUHi2uamKpx_8K/view"
                     target="_blank"
-                    className="btn btn-primary"
+                    className="btn bg-gradient-to-r from-indigo-500 to-primary hover:from-primary/50 hover:to-indigo-500 border-none btn-primary"
                   >
                     <FiDownload /> Download My CV
                   </a>

@@ -11,7 +11,7 @@ import LearningExperienceSection from "../learningExperience/LearningExperienceS
 const Home = () => {
   return (
     <div>
-      <div id="hero" className="bg-black/90 rounded-lg ">
+      <div id="hero" className=" rounded-lg ">
         <HeroSection></HeroSection>
       </div>
       <section id="About" data-aos="fade-up" className=" rounded-lg ">

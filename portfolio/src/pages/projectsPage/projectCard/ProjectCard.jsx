@@ -17,7 +17,7 @@ const ProjectCard = ({ project, index }) => {
   return (
     <div
       data-aos-anchor-placement="center-bottom"
-      className={`flex flex-col md:flex-row ${
+      className={`flex flex-col md:flex-row gap-4 ${
         isEven ? "" : "md:flex-row-reverse"
       } shadow-xl rounded-box overflow-hidden p-4 mb-6`}
     >
