@@ -1,76 +1,76 @@
 import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { FiDownload } from "react-icons/fi";
 import myPhoto from "../../../assets/heroimage.jpg";
+
 const HeroSection = () => {
   return (
-    <section className="max-h-[1000px] my-12 border-4 rounded-2xl border-[#a878d8]  flex flex-col-reverse md:flex-row items-center  justify-between gap-10 px-6 md:px-16 py-12  text-white">
-      {/* Left content */}
-      <div 
-        className="w-full md:w-1/2 flex flex-col gap-6"
-      >
-        <h1 className="text-4xl md:text-3xl font-bold leading-tight text-shadow">
-          Hi, I’m <span className="text-primary">Md Imran Hasan</span>
-        </h1>
-        <h2 className="text-xl text-shadow font-medium text-gray-300">
-          React & MERN Stack Developer
-        </h2>
-        <h1 align="center">
-          <img
-            src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=28&duration=4000&pause=1000&color=F76C6C&width=800&lines=Assalamu+Alaikum+👋+I'm+Md+Imran+Hasan;MERN+Stack+Developer+from+Bangladesh;React+%7C+Node+%7C+Express+%7C+MongoDB;Always+learning+%7C+Open+to+Work"
-            alt="Typing SVG"
-          />
+    <section className="max-h-[1000px] my-12 px-6 bg-black/90 md:px-16 py-12 rounded-2xl flex flex-col-reverse md:flex-row items-center justify-between gap-10  text-white">
+      {/* Left Content */}
+      <div className="w-full md:w-1/2 flex flex-col gap-6">
+        <h1 className="text-4xl md:text-5xl font-bold leading-tight">
+          Hi, I'm <span className="text-primary">Md Imran Hasan</span>
         </h1>
 
-        <p className="text-base text-shadow text-gray-300">
-          I build modern web apps using MongoDB, Express, React, and Node.js. I
-          focus on clean UI and efficient backend to solve real-world problems.
+        <h2 className="text-xl font-medium text-gray-300">
+          MERN Stack Developer | React Specialist
+        </h2>
+
+        <div className="mt-1">
+          <img
+            src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=22&duration=4000&pause=1000&color=FFFFFF&width=550&lines=Assalamu+Alaikum+👋+I'm+Imran+Hasan;Passionate+MERN+Stack+Developer;React+%7C+Node+%7C+MongoDB+%7C+Express;Problem+Solver+%7C+Team+Player"
+            alt="Typing Animation"
+          />
+        </div>
+
+        <p className="text-base text-gray-300 leading-relaxed">
+          I design and develop modern web applications using the MERN stack.
+          Passionate about building scalable solutions with clean UI and
+          efficient backend.
         </p>
 
-        {/* Social Icons */}
-        <div  className="flex items-center gap-4">
+        {/* Social Links */}
+        <div className="flex items-center gap-5 mt-2">
           <a
             href="https://github.com/programmarimran"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-white hover:text-primary text-xl"
+            className="text-white hover:text-primary"
           >
-            <FaGithub size={25} />
+            <FaGithub size={24} />
           </a>
           <a
             href="https://www.linkedin.com/in/md-imran-hasan-664907354/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-white hover:text-primary text-xl"
+            className="text-white hover:text-primary"
           >
-            <FaLinkedin size={25} />
+            <FaLinkedin size={24} />
           </a>
           <a
             href="https://x.com/imranhasan72751"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-white hover:text-primary text-xl"
+            className="text-white hover:text-primary"
           >
-            <FaTwitter size={25} />
+            <FaTwitter size={24} />
           </a>
         </div>
 
         {/* Resume Button */}
-        <div  data-aos="fade-up"
-        data-aos-offset="300"
-        data-aos-easing="ease-in-sine" className="relative inline-block">
-         
+        <div className="mt-4">
           <a
-            href="/resume.pdf"
-            download="resume.pdf"
-            className="btn btn-primary"
+            href="https://drive.google.com/file/d/1vXu69-GoyTvlJS1GbMuUHi2uamKpx_8K/view"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-primary gap-2"
           >
-           <FiDownload/> Download My CV
+            <FiDownload /> Download Resume
           </a>
         </div>
       </div>
 
-      {/* Right image */}
-      <div  className="w-full md:w-1/2 flex justify-center">
+      {/* Right Image */}
+      <div className="w-full md:w-1/2 flex justify-center">
         <img
           src={myPhoto}
           alt="Md Imran Hasan"

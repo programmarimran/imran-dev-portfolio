@@ -6,7 +6,6 @@ import EducationSection from "../education/EducationSection";
 import ProjectSection from "../projects/ProjectSection";
 import ContactSection from "../contac/ContactSection";
 import ScrollToTopButton from "../../../components/ScrollToTopButton/ScrollToTopButton";
-import ScrollToSectionButton from "../../../components/ScrollToSectionButton/ScrollToSectionButton";
 
 const Home = () => {
   return (
@@ -14,18 +13,20 @@ const Home = () => {
       <div>
         <HeroSection></HeroSection>
       </div>
-      {/* //ScrollToSectionButton */}
-      <div className=" sticky top-22 z-50  hover:opacity-500">
-        <ScrollToSectionButton></ScrollToSectionButton>
-      </div>
-      <div  data-aos="fade-up" 
-     data-aos-anchor-placement="center-bottom" className=" overflow-x-hidden"> 
+      <section
+        id="About"
+        data-aos="fade-up"
+        data-aos-anchor-placement="center-bottom"
+        className=" overflow-x-hidden"
+      >
         <AboutMe></AboutMe>
-      </div>
+      </section>
       <section id="Skills">
         <SkillsSection></SkillsSection>
       </section>
-      <EducationSection></EducationSection>
+      <section id="Education">
+        <EducationSection></EducationSection>
+      </section>
       <section id="Projects">
         <ProjectSection></ProjectSection>
       </section>

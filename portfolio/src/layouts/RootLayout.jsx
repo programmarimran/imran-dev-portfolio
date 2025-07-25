@@ -1,15 +1,17 @@
 import { NavLink, Outlet } from "react-router";
 import logo from "../assets/logo.png";
 import { FiDownload } from "react-icons/fi";
+import useScrollToSection from "../hooks/useScrollToSection";
 
 const RootLayout = () => {
+  const { scrollToSection } = useScrollToSection();
   return (
     <>
-      <div className="drawer bg-gradient-to-bl from-[#8742bc50] to-[#36174b50] text-white drawer-end">
+      <div className="drawer bg-black/70  text-white drawer-end">
         <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content flex flex-col">
           {/* Navbar */}
-          <div className=" bg-purple-700/95 sticky top-0 z-50 ">
+          <div className="  bg-black/70  backdrop-blur-xs sticky top-0 z-50 ">
             <div className="max-w-[1440px] mx-auto navbar  w-full justify-between ">
               {/* Left: logo+name */}
               <div className="flex items-center gap-2 px-2">
@@ -50,6 +52,26 @@ const RootLayout = () => {
                       Projects
                     </NavLink>
                   </li>
+                  <li>
+                    <button onClick={() => scrollToSection("About")}>
+                      About
+                    </button>
+                  </li>
+                  <li>
+                    <button onClick={() => scrollToSection("Education")}>
+                      Education
+                    </button>
+                  </li>
+                  <li>
+                    <button onClick={() => scrollToSection("Skills")}>
+                      Skills
+                    </button>
+                  </li>
+                  <li>
+                    <button onClick={() => scrollToSection("Contact")}>
+                      Contact
+                    </button>
+                  </li>
                 </ul>
               </div>
 
@@ -60,8 +82,8 @@ const RootLayout = () => {
                   <ul className="menu menu-horizontal px-1">
                     <li>
                       <a
-                        href="/resume.pdf"
-                        download="resume.pdf"
+                        href="https://drive.google.com/file/d/1vXu69-GoyTvlJS1GbMuUHi2uamKpx_8K/view"
+                        target="_blank"
                         className="btn btn-primary"
                       >
                         <FiDownload />
@@ -106,7 +128,7 @@ const RootLayout = () => {
           </main>
 
           {/* Footer */}
-          <footer className="bg-[#a878d8] text-center p-4 mt-auto">
+          <footer className=" text-center p-4 mt-auto">
             © 2025 Md Imran Hasan. All rights reserved.
           </footer>
         </div>
@@ -145,8 +167,8 @@ const RootLayout = () => {
               <ul>
                 <li>
                   <a
-                    href="/resume.pdf"
-                    download="resume.pdf"
+                    href="https://drive.google.com/file/d/1vXu69-GoyTvlJS1GbMuUHi2uamKpx_8K/view"
+                    target="_blank"
                     className="btn btn-primary"
                   >
                     <FiDownload /> Download My CV
